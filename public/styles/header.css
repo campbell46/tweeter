@@ -1,0 +1,19 @@
+header {
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ padding-top: 120px;
+ height: 520px;
+ width: 100%;
+ background-color: rgb(207, 153, 19);
+ background-image: url('../images/header-bg.png');
+ font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+  height: 1200px;
+}
+
+h2.user-name {
+  font-family: 'Source Sans Pro', sans-serif;
+}
