@@ -13,20 +13,41 @@ $(document).ready(function() {
       url: '/tweets',
       success: function(res) {
         renderTweets(res);
+      }
     });
   };
 
   loadTweets();
 
+  const $tweetMax = $('.counter').val();
+
   $('#submit-tweet').submit(function(event) {
     event.preventDefault();
-    
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: $(this).serialize(),
-      success: loadTweets()
-    });
+    const $userTweet = $('#tweet-text');
+    const $tweetCount = $('.counter').val();
+
+    $('#error-msg').css("visibility", "hidden");
+    $('#error-msg').empty();
+
+    if ($userTweet.val() !== '') {
+      if ($tweetCount < $tweetMax && $tweetCount > -1) {
+        $.ajax({
+          type: "POST",
+          url: "/tweets",
+          data: $(this).serialize(),
+          success: function() {
+            $userTweet.val('');
+            $('.counter').val($tweetMax);
+            loadTweets();
+          }
+        });
+      }
+    }
+    if ($tweetCount === $tweetMax) {
+      showError("Your tweet is empty, that would look silly on Tweeter.");
+    } else if ($tweetCount < 0) {
+      showError("Your tweet is too long, no one wants to read a novel");
+    }
   });
 });
 
@@ -35,12 +56,14 @@ const renderTweets = (tweets) => {
   $('#tweets-container').empty();
   tweets.forEach(tweet =>  {
     const tweetElement = createTweetElement(tweet);
-    $('#tweets-container').append(tweetElement);
+    $('#tweets-container').prepend(tweetElement);
   });
 };
 
 const createTweetElement = (tweets) => {
   const { user, content } = tweets;
+  const timeAgo = timeago.format(tweets.created_at);
+  const safeHTML = `<p>${escape(content.text)}</p>`;
   const tweet = (`
     <article class="tweets">
         <header>
@@ -51,10 +74,10 @@ const createTweetElement = (tweets) => {
           <p class="user-name">${user.handle}</p>
         </header>
         <div class="tweet-text">
-          <p>${content.text}</p>
+          <p>${safeHTML}</p>
         </div>
         <footer>
-          <p>${tweets.created_at}</p>
+          <p>${timeAgo}</p>
           <div class="icons">
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
@@ -63,4 +86,20 @@ const createTweetElement = (tweets) => {
       </article>
   </html>`);
   return tweet;
+};
+
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+const showError = (error) => {
+  const errorEl = (`
+  <i class="fa-solid fa-triangle-exclamation"></i> ${error} <i class="fa-solid fa-triangle-exclamation"></i>
+  `);
+  $('#error-msg').append(errorEl);
+  $('#error-msg').css("visibility", "visible");
+  $('#error-msg').slideDown("slow", function() {
+  });
 };
