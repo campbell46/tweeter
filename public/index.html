@@ -22,6 +22,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/composer.js"></script>
 
     <!-- Resources -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -52,7 +53,7 @@
     <main class="container">
       <section class="tweet-box">
         <div id="error-msg"></div>
-        <form action="/tweets" method="POST" id="submit-tweet">
+        <form id="submit-tweet">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div id="form-submit">
             <button type="submit" id="tweet-btn">Tweet</button>
@@ -62,6 +63,7 @@
       </section>
       <section id="tweets-container">
       </section>
+      <button id="top-btn"><img src='../images/up_arrows.png' class="arrow-btn-img"></button>
     </main>
   </body>
 </html>
