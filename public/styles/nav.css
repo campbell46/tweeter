@@ -1,7 +1,6 @@
 nav {
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
   color: #FFFFFF;
   display: flex;
   justify-content: space-between;
@@ -23,6 +22,6 @@ nav .new-tweet {
 }
 
 nav .fa-angles-down {
-  color: red;
+  color: #DA4C3E;
 }
 
