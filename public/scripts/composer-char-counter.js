@@ -1,6 +1,6 @@
 $(document).ready(function() {
   const $maxCount = $('output.counter').val();
-
+  
   $("#tweet-text").keyup(function() {
     const $textLength = $(this).val().length;
     const $counter = $('output.counter');
