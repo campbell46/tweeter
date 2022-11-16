@@ -27,7 +27,7 @@ textarea {
 }
 
 .red-font {
-  color: red;
+  color: #DA4C3E;
 }
 
 .tweets {
@@ -100,7 +100,7 @@ article .user {
   flex-direction: column;
   align-items: center;
   width: 800px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .counter {
@@ -108,20 +108,55 @@ article .user {
 }
 
 #error-msg {
-  visibility: hidden;
   width: 100%;
   border: 3px;
-  border-color: red;
-  color: red;
+  border-color: #DA4C3E;
+  color: #DA4C3E;
   border-style: solid;
   padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 20px 0 30px 0;
+  visibility: hidden;
+  display: none;
+  text-align: center;
 }
 
 .fa-triangle-exclamation {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+#submit-tweet {
+  margin-top: 50px;;
+  display: none;
+}
+
+.new-tweet:hover {
+  cursor: pointer;
+}
+
+#top-btn {
+  border-radius: 50%;
+  background-color: #DA4C3E;
+  border: none;
+  margin: 20px;
+  cursor: pointer;
+  padding: 20px;
+  height: 80px;
+  width: 80px;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  /* display: none; */
+}
+
+#top-btn:hover {
+  background-color: #c2372a;
+}
+
+.arrow-btn-img {
+  height: 70%;
+  width: 70%;
+}
+
