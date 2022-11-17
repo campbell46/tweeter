@@ -49,19 +49,6 @@ $(document).ready(function() {
       showError("Your tweet is too long, no one wants to read a novel");
     }
   });
-
-  $('.new-tweet').on('click', function() {
-    $('#error-msg').slideUp('slow');
-    $('#error-msg').css("display", "none");
-    $('#submit-tweet').slideToggle('slow', function() {
-      if ($('#submit-tweet').css('display') === 'none') {
-        $('#tweet-text').val('');
-        $('.counter').val($tweetMax);
-      } else {
-        $('textarea').focus();
-      }
-    });
-  });
 });
 
 

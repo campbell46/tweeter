@@ -1,7 +1,8 @@
 header.user_info {
  display: flex;
- align-items: center;
  flex-direction: column;
+ align-items: center;
+ justify-content: center;
  padding-top: 120px;
  height: 520px;
  width: 100%;

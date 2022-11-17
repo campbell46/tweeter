@@ -148,7 +148,7 @@ article .user {
   bottom: 0;
   right: 0;
   z-index: 99;
-  /* display: none; */
+  display: none;
 }
 
 #top-btn:hover {

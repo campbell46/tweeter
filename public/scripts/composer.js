@@ -1,8 +1,23 @@
 $(document).ready(function() {
 
-  $(window).onscroll = function() {
+  $(document).on('scroll', function() {
     scrollFunction();
-  };
+  });
+
+
+  $('.new-tweet').on('click', function() {
+    const $tweetMax = $('.counter').val();
+    $('#error-msg').slideUp('slow');
+    // $('#error-msg').css("display", "none");
+    $('#submit-tweet').slideToggle('slow', function() {
+      if ($('#submit-tweet').css('display') === 'none') {
+        $('#tweet-text').val('');
+        $('.counter').val($tweetMax);
+      } else {
+        $('textarea').focus();
+      }
+    });
+  });
 
   $('#top-btn').on('click', function() {
     document.body.scrollTop = 0;
@@ -12,20 +27,19 @@ $(document).ready(function() {
 
     $('#submit-tweet').slideDown('slow', function() {
       $('textarea').focus();
-      $('#top-btn').style.display = 'none';
+      $('#top-btn').css('display', 'none');
     });
   });
 
   const scrollFunction = () => {
-    const $topBtn = document.getElementById('top-btn');
-    const $newTweet = $('#new-tweet');
-    if (document.documentElement.scrollTop() > 20) {
-      console.log('heyyy');
-      $topBtn.css('display') === 'block';
-      $newTweet.css('display') === 'none';
+    const $topBtn = $('#top-btn');
+    const $newTweetBtn = $('.new-tweet');
+    if ($(document).scrollTop() > 350) {
+      $topBtn.css('display', 'block');
+      $newTweetBtn.css('display', 'none');
     } else {
-      $topBtn.style.display = "none";
-      console.log('hiiii');
+      $topBtn.css('display', 'none');
+      $newTweetBtn.css('display', 'inherit');
     }
   };
 });
