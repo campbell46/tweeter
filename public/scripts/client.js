@@ -27,8 +27,7 @@ $(document).ready(function() {
     const $tweetCount = $('.counter').val();
 
     
-    $('#error-msg').empty();
-    $('#error-msg').css("visibility", "hidden");
+  
 
     if ($userTweet.val() !== '') {
       if ($tweetCount < $tweetMax && $tweetCount > -1) {
@@ -37,6 +36,9 @@ $(document).ready(function() {
           url: "/tweets",
           data: $(this).serialize(),
           success: function() {
+            $('#submit-tweet').slideUp('slow');
+            $('#error-msg').empty();
+            $('#error-msg').css("display", "none");
             $userTweet.val('');
             $('.counter').val($tweetMax);
             loadTweets();
@@ -46,7 +48,6 @@ $(document).ready(function() {
     }
     if ($tweetCount === $tweetMax) {
       if ($('#error-msg').css("visibility", "visible")) {
-
         $('#error-msg').css("display", "none");
         $('#error-msg').slideUp();
         showError("Your tweet is empty, that would look silly on Tweeter.");
