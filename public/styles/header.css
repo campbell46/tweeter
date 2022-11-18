@@ -1,8 +1,4 @@
 header.user_info {
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
  padding-top: 120px;
  height: 520px;
  width: 100%;
@@ -11,6 +7,16 @@ header.user_info {
  font-family: 'Source Sans Pro', sans-serif;
 }
 
-h2.user-name {
-  font-family: 'Source Sans Pro', sans-serif;
+header div .user-name {
+  color: white;
+  font-weight: normal;
+  font-size: 1.5em;
+}
+
+header.user_info div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
 }

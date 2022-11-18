@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  const $tweetMax = $('.counter').val();
 
   $(document).on('scroll', function() {
     scrollFunction();
@@ -6,7 +7,6 @@ $(document).ready(function() {
 
 
   $('.new-tweet').on('click', function() {
-    const $tweetMax = $('.counter').val();
     $('#error-msg').slideUp('slow');
     // $('#error-msg').css("display", "none");
     $('#submit-tweet').slideToggle('slow', function() {
@@ -23,12 +23,13 @@ $(document).ready(function() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 
-    $('textarea').focus();
-
-    $('#submit-tweet').slideDown('slow', function() {
-      $('textarea').focus();
-      $('#top-btn').css('display', 'none');
-    });
+    if ($('#submit-tweet').css('display') === 'none') {
+      $('#submit-tweet').slideDown('slow', function() {
+        $('.counter').val($tweetMax);
+        $('textarea').focus();
+        $('#top-btn').css('display', 'none');
+      });
+    }
   });
 
   const scrollFunction = () => {
