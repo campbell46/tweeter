@@ -26,8 +26,9 @@ $(document).ready(function() {
     const $userTweet = $('#tweet-text');
     const $tweetCount = $('.counter').val();
 
-    $('#error-msg').css("visibility", "hidden");
+    
     $('#error-msg').empty();
+    $('#error-msg').css("visibility", "hidden");
 
     if ($userTweet.val() !== '') {
       if ($tweetCount < $tweetMax && $tweetCount > -1) {
@@ -44,8 +45,23 @@ $(document).ready(function() {
       }
     }
     if ($tweetCount === $tweetMax) {
+      console.log("match");
+      if ($('#error-msg').css("visibility", "visible")) {
+
+        $('#error-msg').css("display", "none");
+        $('#error-msg').slideUp();
+        showError("Your tweet is empty, that would look silly on Tweeter.");
+        return;
+      }
       showError("Your tweet is empty, that would look silly on Tweeter.");
     } else if ($tweetCount < 0) {
+
+      if ($('#error-msg').css("visibility", "visible")) {
+        $('#error-msg').css("display", "none");
+        $('#error-msg').slideUp();
+        showError("Your tweet is too long, no one wants to read a novel");
+        return;
+      }
       showError("Your tweet is too long, no one wants to read a novel");
     }
   });

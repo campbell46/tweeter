@@ -34,7 +34,7 @@ $(document).ready(function() {
   const scrollFunction = () => {
     const $topBtn = $('#top-btn');
     const $newTweetBtn = $('.new-tweet');
-    if ($(document).scrollTop() > 350) {
+    if ($(document).scrollTop() > 250) {
       $topBtn.css('display', 'block');
       $newTweetBtn.css('display', 'none');
     } else {
