@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  const $maxCount = $('output.counter').val();
+  const $maxCount = $('.counter').val();
   
   $("#tweet-text").keyup(function() {
     const $textLength = $(this).val().length;

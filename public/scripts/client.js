@@ -45,7 +45,6 @@ $(document).ready(function() {
       }
     }
     if ($tweetCount === $tweetMax) {
-      console.log("match");
       if ($('#error-msg').css("visibility", "visible")) {
 
         $('#error-msg').css("display", "none");
