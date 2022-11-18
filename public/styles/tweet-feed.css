@@ -1,0 +1,102 @@
+.tweets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  background-color: #f4f1ec;
+  box-sizing: border-box;
+  border: 4px solid #545149;
+  margin: 15px 0px;
+  word-wrap: break-word;
+}
+
+article:hover {
+  box-shadow: 7px 7px lightgray;
+}
+
+article header,
+article footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px 0px 10px;
+  width: 97%;
+}
+
+article div.tweet-text {
+  width: 93%;
+  font-weight: bold;
+}
+
+article footer {
+  border-top: 4px solid #545149;
+  font-size: 70%;
+}
+
+article .user-name {
+  color: lightgrey;
+  font-weight: bold;
+}
+
+article .icons {
+  width: 10%;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  color: #4056A1;
+}
+
+.fa-flag:hover,
+.fa-retweet:hover,
+.fa-heart:hover {
+  color: goldenrod;
+  cursor: pointer;
+}
+
+header .user img {
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+article .user {
+  display: flex;
+}
+
+#tweets-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  margin-top: 40px;
+}
+
+.new-tweet:hover {
+  cursor: pointer;
+}
+
+#top-btn {
+  border-radius: 50%;
+  background-color: #DA4C3E;
+  border: none;
+  margin: 20px;
+  cursor: pointer;
+  padding: 20px;
+  height: 80px;
+  width: 80px;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  display: none;
+}
+
+#top-btn:hover {
+  background-color: #c2372a;
+}
+
+.arrow-btn-img {
+  height: 70%;
+  width: 70%;
+}
