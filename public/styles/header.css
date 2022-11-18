@@ -15,7 +15,7 @@ header.user_info div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 header div .user-name {

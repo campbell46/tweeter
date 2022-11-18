@@ -50,11 +50,11 @@ article header,
 article footer {
   display: flex;
   justify-content: space-between;
-  padding: 10px 10px;
+  padding: 10px 10px 0px 10px;
   width: 97%;
 }
 
-article .tweet-text {
+article div.tweet-text {
   width: 93%;
   font-weight: bold;
 }
