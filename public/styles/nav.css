@@ -26,3 +26,9 @@ nav .fa-angles-down {
   color: #DA4C3E;
 }
 
+@media only screen and (min-width: 1024px) {
+
+  nav {
+    top: 0px;  
+  }
+}

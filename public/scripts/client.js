@@ -26,8 +26,8 @@ $(document).ready(function() {
     const $userTweet = $('#tweet-text');
     const $tweetCount = $('.counter').val();
 
-    
-  
+    $('#error-msg').empty();
+    $('#error-msg').css("display", "none");
 
     if ($userTweet.val() !== '') {
       if ($tweetCount < $tweetMax && $tweetCount > -1) {

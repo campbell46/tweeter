@@ -56,3 +56,11 @@ textarea {
   margin-top: 30px;;
   display: none;
 }
+
+@media only screen and (min-width: 1024px) {
+
+  .tweet-box {
+    margin-top: 12px;
+  }
+  
+}

@@ -25,3 +25,23 @@ header div .user-name {
   margin-bottom: 0px;
   align-items: center;
 }
+
+header.user_info img {
+  border-color: rgb(200, 150, 22);
+  border-color: blueviolet;
+  border: 10px;
+}
+
+@media only screen and (min-width: 1024px) {
+  
+  header.user_info {
+    width: 30%;
+    margin-top: 180px;
+    padding-top: 0px;
+  }
+
+  .user-info-width {
+    width: 100%
+  }
+  
+}
