@@ -4,7 +4,6 @@ $(document).ready(function() {
     scrollFunction();
   });
 
-
   $('.new-tweet').on('click', function() {
     $('#error-msg').slideUp('slow');
     tweetToggle();

@@ -115,11 +115,11 @@ article .user {
 
   .container {
     margin-top: 112px;
-    max-width: 60%;
+    width: 60%;
   }
 
   .tweets {
-    max-width: 100%;
+    width: 100%;
   }
   
 }
