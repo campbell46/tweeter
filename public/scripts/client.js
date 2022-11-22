@@ -13,6 +13,9 @@ $(document).ready(function() {
       url: '/tweets',
       success: function(res) {
         renderTweets(res);
+      },
+      error: function(data, textStatus, errorThrown) {
+        showError('Sorry, something went wrong, please try again later.');
       }
     });
   };
@@ -41,6 +44,10 @@ $(document).ready(function() {
           $userTweet.val('');
           $('.counter').val($tweetMax);
           loadTweets();
+        },
+        error: function(data, textStatus, errorThrown) {
+          showError("Sorry, something went wrong, please try again later.");
+          return;
         }
       });
     }
