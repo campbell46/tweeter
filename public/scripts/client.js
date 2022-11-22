@@ -29,22 +29,20 @@ $(document).ready(function() {
     $('#error-msg').empty();
     $('#error-msg').css("display", "none");
 
-    if ($userTweet.val() !== '') {
-      if ($tweetCount < $tweetMax && $tweetCount > -1) {
-        $.ajax({
-          type: "POST",
-          url: "/tweets",
-          data: $(this).serialize(),
-          success: function() {
-            $('#submit-tweet').slideUp('slow');
-            $('#error-msg').empty();
-            $('#error-msg').css("display", "none");
-            $userTweet.val('');
-            $('.counter').val($tweetMax);
-            loadTweets();
-          }
-        });
-      }
+    if ($tweetCount !== $tweetMax && $tweetCount >= 0) {
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: $(this).serialize(),
+        success: function() {
+          $('#submit-tweet').slideUp('slow');
+          $('#error-msg').empty();
+          $('#error-msg').css("display", "none");
+          $userTweet.val('');
+          $('.counter').val($tweetMax);
+          loadTweets();
+        }
+      });
     }
     if ($tweetCount === $tweetMax) {
       if ($('#error-msg').css("visibility", "visible")) {
