@@ -1,3 +1,7 @@
+/* Fonts */
+/* Colors */
+/* Mixins */
+/** Header including user name and avatar **/
 header.user_info {
   display: flex;
   flex-direction: column;

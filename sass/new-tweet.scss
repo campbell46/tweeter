@@ -1,5 +1,7 @@
 @use 'base' as b;
 
+/** Text box for new tweet **/
+
 textarea {
   width: 100%;
   background-color: b.$off-white;

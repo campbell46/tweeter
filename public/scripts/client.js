@@ -24,6 +24,7 @@ $(document).ready(function() {
 
   const $tweetMax = $('.counter').val();
 
+  //on tweet submit check for empty text box or too many characters
   $('#submit-tweet').submit(function(event) {
     event.preventDefault();
     const $userTweet = $('#tweet-text');
@@ -51,6 +52,7 @@ $(document).ready(function() {
         }
       });
     }
+    //Errors for empty tweet box/ too long char count
     if ($tweetCount === $tweetMax) {
       if ($('#error-msg').css("visibility", "visible")) {
         $('#error-msg').css("display", "none");
@@ -81,6 +83,14 @@ const renderTweets = (tweets) => {
   });
 };
 
+//escape for safe text entry
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+//Create tweet to be added to feed
 const createTweetElement = (tweets) => {
   const { user, content } = tweets;
   const timeAgo = timeago.format(tweets.created_at);
@@ -109,12 +119,7 @@ const createTweetElement = (tweets) => {
   return tweet;
 };
 
-const escape = function(str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
-
+//Show error above tweetbox, depending on situation, message is passed to function
 const showError = (error) => {
   const errorEl = (`
   <i class="fa-solid fa-triangle-exclamation"></i> ${error} <i class="fa-solid fa-triangle-exclamation"></i>

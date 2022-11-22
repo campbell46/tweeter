@@ -1,3 +1,7 @@
+/* Fonts */
+/* Colors */
+/* Mixins */
+/** Tweet feed, including all past tweets **/
 .container {
   width: 90%;
   display: flex;

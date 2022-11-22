@@ -1,5 +1,7 @@
 @use 'base' as b;
 
+/** Header including user name and avatar **/
+
 header.user_info {
  @include b.column-center-all;
  padding-top: 120px;

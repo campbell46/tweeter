@@ -1,11 +1,17 @@
+/* Fonts */
+
 $bungee: 'Bungee', cursive;
 $source-sans-pro: 'Source Sans Pro', sans-serif;
+
+/* Colors */
 
 $blue: #4056A1;
 $gold: goldenrod;
 $brown: #545149;
 $red: #DA4C3E;
 $off-white: #f4f1ec;
+
+/* Mixins */
 
 @mixin column-horizontal-center {
   display: flex;

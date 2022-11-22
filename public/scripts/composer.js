@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  //check for scrollTop positioning
   $(document).on('scroll', function() {
     scrollFunction();
   });
@@ -18,10 +19,11 @@ $(document).ready(function() {
   });
 });
 
+//scrolls to top of page, hides button
 const scrollFunction = () => {
   const $topBtn = $('#top-btn');
   const $newTweetBtn = $('.new-tweet');
-  if ($(document).scrollTop() > 250) {
+  if ($(document).scrollTop() > 150) {
     $topBtn.css('display', 'block');
     $newTweetBtn.css('display', 'none');
   } else {
@@ -30,6 +32,7 @@ const scrollFunction = () => {
   }
 }
 
+//Toggle tweet box up/down
 const tweetToggle = () => {
   $('#submit-tweet').slideToggle('slow', function() {
     if ($('#submit-tweet').css('display') === 'none') {
@@ -42,6 +45,7 @@ const tweetToggle = () => {
   });
 };
 
+//Slides tweet box down
 const tweetDown = () => {
   if ($('#submit-tweet').css('display') === 'none') {
     $('#submit-tweet').slideDown('slow', function() {

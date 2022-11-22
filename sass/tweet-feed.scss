@@ -1,5 +1,7 @@
 @use 'base' as b;
 
+/** Tweet feed, including all past tweets **/
+
 .container {
   width: 90%;
   @include b.column-horizontal-center;
