@@ -1,47 +1,37 @@
 header.user_info {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- padding-top: 120px;
- height: 520px;
- width: 100%;
- background-color: goldenrod;
- background-image: url('../images/header-bg.png');
- font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 120px;
+  height: 520px;
+  width: 100%;
+  background-color: goldenrod;
+  background-image: url("../images/header-bg.png");
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 header.user_info div {
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
 }
 
 header div .user-name {
-  color: white;
+  color: #f4f1ec;
   font-weight: normal;
   font-size: 1.5em;
   margin-bottom: 0px;
-  align-items: center;
-}
-
-header.user_info img {
-  border-color: rgb(200, 150, 22);
-  border-color: blueviolet;
-  border: 10px;
 }
 
 @media only screen and (min-width: 1024px) {
-  
   header.user_info {
     width: 30%;
     margin-top: 180px;
     padding-top: 0px;
   }
-
   .user-info-width {
-    width: 100%
+    width: 100%;
   }
-  
 }

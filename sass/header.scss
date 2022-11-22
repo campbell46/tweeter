@@ -1,0 +1,37 @@
+@use 'base' as b;
+
+header.user_info {
+ @include b.column-center-all;
+ padding-top: 120px;
+ height: 520px;
+ width: 100%;
+ background-color: b.$gold;
+ background-image: url('../images/header-bg.png');
+ font-family: b.$source-sans-pro;
+}
+
+header.user_info div {
+  padding: 20px;
+  @include b.column-horizontal-center;
+}
+
+header div .user-name {
+  color: b.$off-white;
+  font-weight: normal;
+  font-size: 1.5em;
+  margin-bottom: 0px;
+}
+
+@media only screen and (min-width: 1024px) {
+  
+  header.user_info {
+    width: 30%;
+    margin-top: 180px;
+    padding-top: 0px;
+  }
+
+  .user-info-width {
+    width: 100%
+  }
+  
+}

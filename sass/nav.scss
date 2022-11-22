@@ -1,0 +1,27 @@
+@use 'base' as b;
+
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: b.$blue;
+  color: b.$off-white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: .8em 1.5em;
+  position: fixed;
+
+  .logo {
+  font-family: b.$bungee;
+  font-size: 2em;
+  }
+
+  .new-tweet {
+    @include b.column-horizontal-center;
+    font-family: b.$source-sans-pro;
+  }
+
+  .fa-angles-down {
+    color: b.$red;
+  } 
+}

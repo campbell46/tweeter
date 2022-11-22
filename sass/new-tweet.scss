@@ -1,21 +1,23 @@
+@use 'base' as b;
+
 textarea {
   width: 100%;
-  background-color: #f4f1ec;
+  background-color: b.$off-white;
   box-sizing: border-box;
   border-style: none;
   outline: none;
-  border-bottom: 4px solid #545149;
+  border-bottom: 4px solid b.$brown;
   overflow: auto;
   resize: none;
-  font-family: "Source Sans Pro", sans-serif;
-  color: #545149;
+  font-family: b.$source-sans-pro;
+  color: b.$brown;
   font-weight: bold;
 }
 
 #tweet-btn {
-  background-color: #4056A1;
+  background-color: b.$blue;
   border: none;
-  color: white;
+  color : white;
   padding: 5px 10px;
   margin-top: 10px;
 }
@@ -27,7 +29,7 @@ textarea {
 #form-submit {
   display: flex;
   justify-content: space-between;
-  font-family: "Bungee", cursive;
+  font-family: b.$bungee;
 }
 
 .tweet-box {
@@ -35,7 +37,7 @@ textarea {
 }
 
 .red-font {
-  color: #DA4C3E;
+  color: b.$red;
 }
 
 .counter {
@@ -45,8 +47,8 @@ textarea {
 #error-msg {
   width: 100%;
   border: 3px;
-  border-color: #DA4C3E;
-  color: #DA4C3E;
+  border-color: b.$red;
+  color: b.$red;
   border-style: solid;
   padding: 10px;
   margin: 30px 0 30px 0;
@@ -61,14 +63,16 @@ textarea {
 }
 
 #submit-tweet {
-  margin-top: 30px;
+  margin-top: 30px;;
   display: none;
 }
 
 @media only screen and (min-width: 1024px) {
+
   .tweet-box {
     width: 90%;
     margin-top: 12px;
     align-self: center;
   }
+  
 }
