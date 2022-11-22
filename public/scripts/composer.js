@@ -30,7 +30,7 @@ const scrollFunction = () => {
     $topBtn.css('display', 'none');
     $newTweetBtn.css('display', 'inherit');
   }
-}
+};
 
 //Toggle tweet box up/down
 const tweetToggle = () => {
