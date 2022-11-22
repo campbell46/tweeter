@@ -14,7 +14,7 @@ $(document).ready(function() {
       success: function(res) {
         renderTweets(res);
       },
-      error: function(data, textStatus, errorThrown) {
+      error: function() {
         showError('Sorry, something went wrong, please try again later.');
       }
     });
@@ -45,7 +45,7 @@ $(document).ready(function() {
           $('.counter').val($tweetMax);
           loadTweets();
         },
-        error: function(data, textStatus, errorThrown) {
+        error: function() {
           showError("Sorry, something went wrong, please try again later.");
           return;
         }
